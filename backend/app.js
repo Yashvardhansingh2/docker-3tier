@@ -18,8 +18,13 @@ const pool = mysql.createPool({
 });
 
 // Health check endpoint
-app.get('/api/health', (req, res) => {
+app.get('/health', (req, res) => {
   res.json({ status: 'Backend is running' });
+});
+
+// API health check endpoint
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'Backend API is running' });
 });
 
 // Get data endpoint
